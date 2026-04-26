@@ -56,15 +56,27 @@ pip install pandas numpy scikit-learn networkx matplotlib seaborn gensim
 ## Results Summary
 
 ### Graph Analysis
+![Subreddit Network](images/network_graph.png)
 The network consists of 13,624 nodes and 40,584 edges, exhibiting a scale-free structure where a small number of subreddits dominate connectivity. r/askreddit and r/iama ranked highest in both degree and PageRank centrality. Community detection identified 113 distinct communities, reflecting Reddit's naturally fragmented, topic-driven organization.
 
 ### Dimensionality Reduction
-PCA captured only 27.8% of variance across two components, producing overlapping projections with limited sentiment separability. SNE preserved local structure but was computationally expensive at scale. t-SNE produced the clearest spatial organization, confirming the presence of non-linear structure in the feature space.
+![PCA Projection](images/pca_plot.png)
+PCA captured only 27.8% of variance across two components, producing overlapping projections with limited sentiment separability. 
+![SNE Visualization](images/sne_plot.png)
+SNE preserved local structure but was computationally expensive at scale. 
+![t-SNE Visualization](images/tsne_plot.png)
+t-SNE produced the clearest spatial organization, confirming the presence of non-linear structure in the feature space.
 
 ### Embedding Analysis
 Word2Vec embeddings trained on subreddit co-occurrence sequences successfully captured topical community identity. Nearest neighbor results showed strong semantic clustering — r/worldnews grouped with r/russia and r/ukrainianconflict, r/funny grouped with r/adviceanimals and r/reactiongifs, and r/dogecoin clustered tightly with other Dogecoin-related communities.
 
 Logistic regression on the embeddings achieved 99.69% accuracy, identical to the majority-class baseline, due to extreme class imbalance (less than 0.31% negative links). This confirmed that embeddings do not encode sentiment.
+
+#### PCA on Embeddings
+![Embedding PCA](images/embedding_pca.png)
+
+#### t-SNE on Embeddings
+![Embedding t-SNE](images/embedding_tsne.png)
 
 ---
 
