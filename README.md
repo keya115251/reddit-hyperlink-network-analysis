@@ -61,10 +61,15 @@ The network consists of 13,624 nodes and 40,584 edges, exhibiting a scale-free s
 
 ### Dimensionality Reduction
 ![PCA Projection](pca_plot.png)
+
 PCA captured only 27.8% of variance across two components, producing overlapping projections with limited sentiment separability. 
+
 ![SNE Visualization](sne_plot.png)
+
 SNE preserved local structure but was computationally expensive at scale. 
-![t-SNE Visualization](tsne_plot.png)
+
+![t-SNE Visualization](tsneplot.png)
+
 t-SNE produced the clearest spatial organization, confirming the presence of non-linear structure in the feature space.
 
 ### Embedding Analysis
